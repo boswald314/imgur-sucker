@@ -127,7 +127,7 @@
       return imageList.forEach(function(image, index, array) {
         var filename;
         filename = image.link;
-        filename = filename.split("/")[-1];
+        filename = filename.split("/").slice(-1).pop();
         console.log(filename);
         return fs.exists(process.cwd() + "/sucked/" + subreddit + "/" + filename, function(exists) {
           var e, imageRequest;
